@@ -1,2 +1,14 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Sign Up Today</h1>
+
+
+<form accept-charset="UTF-8" action="/users" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <label for="username">Username:</label>
+  <input id="username" name="user[username]" type="text" /><br><br>
+  <label for="username">Email:</label>
+  <input id="email" name="user[email]" type="email" /><br><br>
+  <label for="username">Password:</label>
+  <input id="password" name="user[password]" type="password" /><br><br>
+  <input type="hidden" name="authenticity_token" value="form_authenticity_token"/>
+  <input name="commit" type="submit" value="Sign Up!" />
+</form>
