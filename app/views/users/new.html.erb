@@ -1,14 +1,41 @@
 <h1>Sign Up Today</h1>
 
+<!--<form accept-charset="UTF-8" action="/users" method="post">-->
+<!--  <input name="utf8" type="hidden" value="&#x2713;" />-->
+<!--  <label for="username">Username:</label>-->
+<!--  <input id="username" name="user[username]" type="text" /><br><br>-->
+<!--  <label for="username">Email:</label>-->
+<!--  <input id="email" name="user[email]" type="email" /><br><br>-->
+<!--  <label for="username">Password:</label>-->
+<!--  <input id="password" name="user[password]" type="password" /><br><br>-->
+<!--  <input type="hidden" name="authenticity_token" value="form_authenticity_token"/>-->
+<!--  <input name="commit" type="submit" value="Sign Up!" />-->
+<!--</form>-->
 
-<form accept-charset="UTF-8" action="/users" method="post">
-  <input name="utf8" type="hidden" value="&#x2713;" />
-  <label for="username">Username:</label>
-  <input id="username" name="user[username]" type="text" /><br><br>
-  <label for="username">Email:</label>
-  <input id="email" name="user[email]" type="email" /><br><br>
-  <label for="username">Password:</label>
-  <input id="password" name="user[password]" type="password" /><br><br>
-  <input type="hidden" name="authenticity_token" value="form_authenticity_token"/>
-  <input name="commit" type="submit" value="Sign Up!" />
-</form>
+
+<%#= form_tag("/users", method: "post") do %>
+  <%#= label_tag(:username, "Username") %>
+  <%#= text_field_tag(:username) %>
+  <%#= label_tag(:email, "Email") %>
+  <%#= email_field_tag(:email) %>
+  <%#= label_tag(:password, "Password") %>
+  <%#= password_field_tag(:password) %>
+  <%#= submit_tag("Sign Up!") %>
+<%# end %>
+
+<%#= form_for :user do |f| %>
+<!--  Username: <%#= f.text_field :username %><br />-->
+<!--  Email : <%#= f.email_field :email %><br />-->
+<!--  Password : <%#= f.password_field :password %><br />-->
+  <%#= f.submit %>
+<%# end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :Your_Username_Here %>
+  <%= f.text_field :username, placeholder: "John Doe" %><br>
+  <%= f.label :Email %>
+  <%= f.email_field :email, placeholder: "example@example.com" %><br>
+  <%= f.label :Password %>
+  <%= f.password_field :password, placeholder: "password" %><br>
+  <%= f.submit 'Sign Up!' %>
+<% end %>

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :users, only: %i[new create]
+  # patch 'users/:id', to: 'user#update'
+  resources :users, only: %i[new create edit update]
+
+
 end
